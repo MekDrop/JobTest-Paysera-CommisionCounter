@@ -1,0 +1,60 @@
+# This file is to easy configure development enviroment
+# Last automatic file update/creation was on 2017-01-13 15:24:20 +0200
+# More info could be found at http://impresscms.org
+
+# ---------------------------------------------------------------------------------------
+# IP of this virtual machine.
+# ---------------------------------------------------------------------------------------
+ip: 192.168.172.27
+
+# ---------------------------------------------------------------------------------------
+# You can type this hostname in your browser and launch the website
+# ---------------------------------------------------------------------------------------
+hostname: 
+    - paysera.dev
+
+# ---------------------------------------------------------------------------------------
+# This is name how is box is listed in virtual machine 
+# ---------------------------------------------------------------------------------------
+name: paysera-dev
+
+# ---------------------------------------------------------------------------------------
+# SSH Keys. If you use GitHub client, you can just simply change "id_rsa" to "github_rsa"
+# and everything should work without any extended configuration.
+#
+# If you remove lines these lines below, code in vagrantfile will try to autodetect
+# where your keys are located. If it fails, it raise an error.
+# ---------------------------------------------------------------------------------------
+#keys:
+#     private: ~/.ssh/id_rsa
+#     public: ~/.ssh/id_rsa.pub
+
+# ---------------------------------------------------------------------------------------
+# Defines ports forwarted list
+# ---------------------------------------------------------------------------------------
+ports:
+     - host: 80
+       guest: 80
+
+# ---------------------------------------------------------------------------------------
+# How many CPUs should this box use? Default value is 1.
+# ---------------------------------------------------------------------------------------
+cpus: 1
+
+# ---------------------------------------------------------------------------------------
+# How much RAM should this box have? This is a number in megabytes. Default value is 512.
+# ---------------------------------------------------------------------------------------
+memory: 512
+
+# ---------------------------------------------------------------------------------------
+# Do we need to check automatically for box updates? Default value is false
+# ---------------------------------------------------------------------------------------
+check_update: false
+
+# ---------------------------------------------------------------------------------------
+# What shell commands will be executed on provision?
+# ---------------------------------------------------------------------------------------
+provision: |
+  sudo apt-get -y -q install php php-cli composer php-mbstring php-dom php-zip mc
+  cd /vagrant
+  composer update

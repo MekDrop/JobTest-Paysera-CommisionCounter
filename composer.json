@@ -1,0 +1,19 @@
+{
+    "name": "mekdrop/jobtest-paysera-commisioncounter",
+    "description": "Tool to count commsiosions",
+    "type": "project",
+    "require": {
+        "symfony/console": "^3.2",
+        "league/csv": "^8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "license": "Public Domain",
+    "authors": [
+        {
+            "name": "Raimondas Rimkevicius",
+            "email": "raimondas.rimkevicius@mekdrop.name"
+        }
+    ]
+}
