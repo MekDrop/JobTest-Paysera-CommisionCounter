@@ -6,6 +6,9 @@
 # We recommend do not edit it or at least do not use again impressbox command
 # because this file will be overwritten in that case. If you want to set some
 # special values for vagrant box, use config.yaml instead.
+#
+# If you want to use this vagrant file, make sure that git app is in your cmd
+# path. Otherwise will crash!
 # -----------------------------------------------------------------------------
 # Last generation date:	2017-01-13 15:24:20 +0200
 # More information:		http://impresscms.org
