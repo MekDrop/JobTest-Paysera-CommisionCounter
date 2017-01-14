@@ -16,5 +16,18 @@
             "name": "Raimondas Rimkevicius",
             "email": "raimondas.rimkevicius@mekdrop.name"
         }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\Writers\\": "writers/",
+            "App\\Readers\\": "readers/",
+            "App\\Processors\\": "processors/",
+            "App\\Models\\": "models/",
+            "App\\Exception\\": "exception/",
+            "App\\Enum\\": "enum/"
+        }
+    },
+    "bin": [
+        "cat.php"
     ]
 }

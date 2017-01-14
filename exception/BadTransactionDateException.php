@@ -14,10 +14,10 @@ class BadTransactionDateException extends \Exception
     /**
      * BadTransactionDateException constructor.
      *
-     * @param string $date
-     * @param Exception $previous
+     * @param string         $date      Bad date
+     * @param Exception|null $previous  Previous error
      */
-    public function __construct($date, Exception $previous)
+    public function __construct($date, \Exception $previous = null)
     {
         parent::__construct(sprintf('Bad date "%s"', addslashes(var_export($date, true))), 0, $previous);
     }

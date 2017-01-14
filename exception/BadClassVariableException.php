@@ -16,12 +16,11 @@ class BadClassVariableException extends \Exception
     /**
      * BadClassVariableException constructor.
      *
-     * @param string $variable
-     * @param object|class $class
-     *
-     * @param Exception $previous
+     * @param string         $variable  Bad variable
+     * @param object|string  $class     Class or object
+     * @param Exception|null $previous  Previous error
      */
-    public function __construct($variable, $class, Exception $previous)
+    public function __construct($variable, $class, \Exception $previous = null)
     {
         parent::__construct(sprintf('"%s" variable for "%s" class not set', $variable, is_object($class)?get_class($class):null), 0, $previous);
     }

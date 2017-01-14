@@ -173,10 +173,28 @@ class Transaction {
      * @throws BadCurrencyNameValueLengthException
      */
     protected function cleanCurrency($currency) {
-        if (strlen($currency) != 2) {
+        if (strlen($currency) != 3) {
             throw new BadCurrencyNameValueLengthException();
         }
         return strtoupper($currency);
+    }
+
+    /**
+     * Gets user hash for transaction
+     *
+     * @return string
+     */
+    public function getUserHash() {
+        return $this->user_type . ';' . $this->user_id;
+    }
+
+    /**
+     * Gets week no for transaction
+     *
+     * @return string
+     */
+    public function getWeekNo() {
+        return date("W", strtotime($this->date));
     }
 
 }
